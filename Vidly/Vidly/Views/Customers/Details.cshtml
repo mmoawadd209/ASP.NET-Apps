@@ -6,16 +6,18 @@
 <div class="col-sm-3">
     <table class="table table-hover table-condensed">
         <tr>
-            <td><b>Discount Rate : </b>@Model.MembershipType.DiscountRate %</td>
+            <td><b>Membership Type : </b>@Model.MembershipType.Name </td>
         
         </tr>
-        <tr>
-            <td><b>Duration : </b>@Model.MembershipType.DurationInMonths months</td>
+        @if (Model.BirthDate.HasValue)
+        {
+            <tr>
+                <td><b>Birth Date : </b>@Model.BirthDate</td>
        
-        </tr>
-        <tr>
-            <td><b>Sign Up Fee : </b>@Model.MembershipType.SignUpFee $</td>
-        </tr>
+            </tr>  
+        }
+      
+        
     </table>
 </div>
 <div class="clearfix"></div>

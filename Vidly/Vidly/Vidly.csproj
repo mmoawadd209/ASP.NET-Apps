@@ -198,6 +198,18 @@
     <Compile Include="Migrations\201905272102137_AppliedAnnotationsToCustomersAndMoviesTables.Designer.cs">
       <DependentUpon>201905272102137_AppliedAnnotationsToCustomersAndMoviesTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905280342284_AddNameCoulmnToMembershipTypesTable.cs" />
+    <Compile Include="Migrations\201905280342284_AddNameCoulmnToMembershipTypesTable.Designer.cs">
+      <DependentUpon>201905280342284_AddNameCoulmnToMembershipTypesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905280345085_PopulateNameColumnInMemebershipTypesTable.cs" />
+    <Compile Include="Migrations\201905280345085_PopulateNameColumnInMemebershipTypesTable.Designer.cs">
+      <DependentUpon>201905280345085_PopulateNameColumnInMemebershipTypesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905280547372_AddBirthDateCoulmnToCustomersTable.cs" />
+    <Compile Include="Migrations\201905280547372_AddBirthDateCoulmnToCustomersTable.Designer.cs">
+      <DependentUpon>201905280547372_AddBirthDateCoulmnToCustomersTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -300,6 +312,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905272102137_AppliedAnnotationsToCustomersAndMoviesTables.resx">
       <DependentUpon>201905272102137_AppliedAnnotationsToCustomersAndMoviesTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905280342284_AddNameCoulmnToMembershipTypesTable.resx">
+      <DependentUpon>201905280342284_AddNameCoulmnToMembershipTypesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905280345085_PopulateNameColumnInMemebershipTypesTable.resx">
+      <DependentUpon>201905280345085_PopulateNameColumnInMemebershipTypesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905280547372_AddBirthDateCoulmnToCustomersTable.resx">
+      <DependentUpon>201905280547372_AddBirthDateCoulmnToCustomersTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
