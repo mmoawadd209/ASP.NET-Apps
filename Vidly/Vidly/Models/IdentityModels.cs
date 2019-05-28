@@ -33,5 +33,7 @@ namespace Vidly.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Vidly.Models.Genre> Genres { get; set; }
     }
 }
