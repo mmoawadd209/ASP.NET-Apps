@@ -2,6 +2,25 @@
 @{
     ViewBag.Title = "Details";
 }
+<h3>@Model.Name</h3><br />
+<div class="col-sm-3">
+    <table class="table table-hover table-condensed">
+        <tr>
+            <td><b>Discount Rate : </b>@Model.MembershipType.DiscountRate %</td>
+        
+        </tr>
+        <tr>
+            <td><b>Duration : </b>@Model.MembershipType.DurationInMonths months</td>
+       
+        </tr>
+        <tr>
+            <td><b>Sign Up Fee : </b>@Model.MembershipType.SignUpFee $</td>
+        </tr>
+    </table>
+</div>
+<div class="clearfix"></div>
 
-<h2>@Model.Name</h2>
+
+
+
 
