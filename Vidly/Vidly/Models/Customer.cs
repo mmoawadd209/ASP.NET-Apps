@@ -9,8 +9,7 @@ namespace Vidly.Models
     {
         public int Id { get; set; }
 
-        [Required]
-        [StringLength(255,ErrorMessage ="Maximum 255 charachters Allowed")]
+        [Required(ErrorMessage ="Please enter customer name.")]
         [Display(Name = "Customer Name")]
         public string Name { get; set; }
 
