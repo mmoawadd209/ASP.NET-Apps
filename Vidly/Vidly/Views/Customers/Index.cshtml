@@ -1,10 +1,12 @@
-﻿@model IEnumerable<Vidly.Models.Customer>
+﻿
+@model  IEnumerable<Vidly.Models.Customer>
 
     @{
         ViewBag.Title = "Index";
     }
 
-    <h2>Customers</h2>
+<h2>Customers</h2>
+<div>@Html.ActionLink("Create New", "Create","Customers")</div>
 
     <table class="table table-bordered table-hover">
         <tr>
@@ -15,7 +17,7 @@
         @foreach (var customer in Model)
         {
             <tr>
-                <td>@Html.ActionLink(customer.Name,"Details","Customers",new {id=customer.Id},null)</td>
+                <td>@Html.ActionLink(customer.Name, "Edit", "Customers", new {id =customer.Id},null )</td>
                 <td>@customer.MembershipType.Name</td>
             </tr>
         }
