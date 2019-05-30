@@ -30,9 +30,8 @@ namespace Vidly.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            var viewModel = new MovieViewModel
-            {
-                Movie = new Movie(),
+            var viewModel = new MovieViewModel()
+            {               
                 Genres = _context.Genres.ToList()
             };
             return View("MovieForm", viewModel);
@@ -45,9 +44,8 @@ namespace Vidly.Controllers
         public ActionResult Edit(int id)
         {
             var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
-            var viewModel = new MovieViewModel
+            var viewModel = new MovieViewModel(movie)
             {
-                Movie = movie,
                 Genres = _context.Genres.ToList()
             };
             return View("MovieForm",viewModel);
@@ -62,9 +60,8 @@ namespace Vidly.Controllers
         {
             if (!ModelState.IsValid)
             {
-                var viewModel = new MovieViewModel
+                var viewModel = new MovieViewModel(movie)
                 {
-                    Movie = movie,
                     Genres = _context.Genres.ToList()
                 };
                 return View("MovieForm", viewModel);
