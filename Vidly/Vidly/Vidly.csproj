@@ -222,6 +222,10 @@
     <Compile Include="Migrations\201905291617104_OverrideMoviesTableConventions.Designer.cs">
       <DependentUpon>201905291617104_OverrideMoviesTableConventions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905300134275_UpdateMovieTableConventions.cs" />
+    <Compile Include="Migrations\201905300134275_UpdateMovieTableConventions.Designer.cs">
+      <DependentUpon>201905300134275_UpdateMovieTableConventions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -347,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905291617104_OverrideMoviesTableConventions.resx">
       <DependentUpon>201905291617104_OverrideMoviesTableConventions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905300134275_UpdateMovieTableConventions.resx">
+      <DependentUpon>201905300134275_UpdateMovieTableConventions.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

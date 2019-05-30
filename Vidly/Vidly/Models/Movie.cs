@@ -1,6 +1,4 @@
-﻿
-
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Vidly.Models
@@ -20,16 +18,17 @@ namespace Vidly.Models
         [Display(Name ="Genre")]
         public byte GenreId { get; set; }
 
-       
+        [Required]
         [Display(Name ="Release Date")]
         public DateTime? ReleaseDate { get; set; }
 
-        
-        [Display(Name ="Added On")]
+        [Required]
+        [Display(Name ="Date Added")]
         public DateTime? DateAdded { get; set; }
 
         
         [Display(Name ="Number In Stock")]
+        [Range(1,100)]
         public int NumberInStock { get; set; }
     }
 }
