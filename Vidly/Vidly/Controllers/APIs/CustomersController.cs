@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web.Http;
+using AutoMapper;
+using Vidly.Dtos;
 using Vidly.Models;
 
 namespace Vidly.Controllers.APIs
@@ -18,42 +20,47 @@ namespace Vidly.Controllers.APIs
 
         // Get : Api/Customers
         [HttpGet]
-        public IEnumerable<Customer> GetAll()
+        public IEnumerable<CustomerDto> GetAll()
         {
-            return _context.Customers.ToList();
+            return _context.Customers.ToList().Select(Mapper.Map<Customer,CustomerDto>);
         }
 
 
         // Get : Api/Customers/1
         [HttpGet]
-        public Customer Get(int id)
+        public CustomerDto Get(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
 
             if (customer == null)            
                 throw new HttpResponseException(HttpStatusCode.NotFound);
-            
-            return customer;
+
+            var customerDto = Mapper.Map<Customer,CustomerDto>(customer);
+
+            return customerDto;
         }
 
 
         // Post : Api/Customers
         [HttpPost]
-        public Customer Create(Customer customer)
+        public CustomerDto Create(CustomerDto customerDto)
         {
             if (!ModelState.IsValid)           
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
             
+            var customer = Mapper.Map<CustomerDto,Customer>(customerDto);
+
             _context.Customers.Add(customer);
             _context.SaveChanges();
 
-            return customer;
+            customerDto.Id = customer.Id;
+            return customerDto;
         }
 
 
         // Put : Api/Customers/1
         [HttpPut]
-        public void Edit(int id,Customer customer)
+        public void Edit(int id,CustomerDto customerDto)
         {  
             var customerInDb =  _context.Customers.SingleOrDefault(c => c.Id == id);
 
@@ -62,10 +69,9 @@ namespace Vidly.Controllers.APIs
             
             if (!ModelState.IsValid)            
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
-            
-            customerInDb.Name = customer.Name;
-            customerInDb.MembershipTypeId = customer.MembershipTypeId;
-            customerInDb.IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter;                        
+
+           Mapper.Map(customerDto, customerInDb);
+                             
             _context.SaveChanges();            
         }
 
