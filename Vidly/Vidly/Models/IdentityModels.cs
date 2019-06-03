@@ -11,11 +11,7 @@ namespace Vidly.Models
     public class ApplicationUser : IdentityUser
     {
         
-        [StringLength(255)]
-        public Gendre Gendre { get; set; }
-
         
-        public byte GendreId { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -32,7 +28,7 @@ namespace Vidly.Models
         public DbSet<Movie> Movies { get; set; }
         public DbSet<MembershipType> MembershipTypes { get; set; }
         public DbSet<Genre> Genres { get; set; }
-        public DbSet<Gendre> Gendres { get; set; }
+   
         
         
         public ApplicationDbContext()

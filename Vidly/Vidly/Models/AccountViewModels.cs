@@ -66,23 +66,15 @@ namespace Vidly.Models
 
     public class RegisterViewModel
     {
-        private readonly ApplicationDbContext _context = new ApplicationDbContext();
-
-        public RegisterViewModel()
-        {
-            Gendres = new SelectList(_context.Gendres.ToList(), "Id", "Name");
-        }
+       
 
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        public SelectList Gendres { get; set; }
-        [Display(Name ="Gendre")]
-        public byte GendreId {get;set; }
-             
-      
+       
+ 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]

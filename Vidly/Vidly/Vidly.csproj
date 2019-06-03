@@ -252,30 +252,9 @@
     <Compile Include="Migrations\201906030346408_SeedUsers.Designer.cs">
       <DependentUpon>201906030346408_SeedUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906030444459_AddGendreToApplicationUser.cs" />
-    <Compile Include="Migrations\201906030444459_AddGendreToApplicationUser.Designer.cs">
-      <DependentUpon>201906030444459_AddGendreToApplicationUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906030544384_RemoveGendreCoulmnFromApplicationUserTable.cs" />
-    <Compile Include="Migrations\201906030544384_RemoveGendreCoulmnFromApplicationUserTable.Designer.cs">
-      <DependentUpon>201906030544384_RemoveGendreCoulmnFromApplicationUserTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906030549108_CreateGendresTable.cs" />
-    <Compile Include="Migrations\201906030549108_CreateGendresTable.Designer.cs">
-      <DependentUpon>201906030549108_CreateGendresTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906030550414_PopulateGendresTable.cs" />
-    <Compile Include="Migrations\201906030550414_PopulateGendresTable.Designer.cs">
-      <DependentUpon>201906030550414_PopulateGendresTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906030555530_AddGendreToApplicationUser1.cs" />
-    <Compile Include="Migrations\201906030555530_AddGendreToApplicationUser1.Designer.cs">
-      <DependentUpon>201906030555530_AddGendreToApplicationUser1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\Gendre.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -581,21 +560,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906030346408_SeedUsers.resx">
       <DependentUpon>201906030346408_SeedUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906030444459_AddGendreToApplicationUser.resx">
-      <DependentUpon>201906030444459_AddGendreToApplicationUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906030544384_RemoveGendreCoulmnFromApplicationUserTable.resx">
-      <DependentUpon>201906030544384_RemoveGendreCoulmnFromApplicationUserTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906030549108_CreateGendresTable.resx">
-      <DependentUpon>201906030549108_CreateGendresTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906030550414_PopulateGendresTable.resx">
-      <DependentUpon>201906030550414_PopulateGendresTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906030555530_AddGendreToApplicationUser1.resx">
-      <DependentUpon>201906030555530_AddGendreToApplicationUser1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
