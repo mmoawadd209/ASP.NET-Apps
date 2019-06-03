@@ -7,19 +7,24 @@ namespace Vidly
     public class MappingProfile: Profile
     {
 
-        public MappingProfile()
-        {
-            Mapper.CreateMap<Customer, CustomerDto>()
+        public MappingProfile() {
+
+            //Domain to Dto
+
+            Mapper.CreateMap<Customer, CustomerDto>();
+
+            Mapper.CreateMap<Movie, MovieDto>();
+                
+                
+            //Dto to Domain
+
+            Mapper.CreateMap<CustomerDto, Customer>()
                 .ForMember(m=>m.Id,opt=>opt.Ignore());
 
-            Mapper.CreateMap<CustomerDto, Customer>();
-
-
-            Mapper.CreateMap<MovieDto, Movie>();
+            Mapper.CreateMap<MovieDto, Movie>()
+                .ForMember(m=>m.Id,opt=>opt.Ignore());
                 
             
-            Mapper.CreateMap<Movie, MovieDto>()
-                .ForMember(m=>m.Id,opt=>opt.Ignore());
         }
     }
 }
