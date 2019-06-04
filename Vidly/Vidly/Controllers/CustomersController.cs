@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
-using Vidly.View_Models;
+using Vidly.View_Models.ApplicationViewModels;
 
 namespace Vidly.Controllers
 {
@@ -21,14 +21,17 @@ namespace Vidly.Controllers
         // GET: Customers/Index
         public ActionResult Index()
         {
-            var customers = _context.Customers.Include(c=>c.MembershipType).ToList();                           
-            return View(customers);
+            var customers = _context.Customers.Include(c=>c.MembershipType).ToList();
+
+            return View((User.IsInRole(RoleName.CanManageCustmers))? "List": "ReadonlyList", customers); 
+               
         }
 
 
         
       // Get : Customers/Create 
         [HttpGet]
+        [Authorize(Roles =RoleName.CanManageCustmers)]
         public ActionResult Create()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
@@ -44,6 +47,7 @@ namespace Vidly.Controllers
 
         // Get : Customers/Edit
         [HttpGet]
+        [Authorize(Roles =RoleName.CanManageCustmers)]
         public ActionResult Edit(int id)
         {
             var customer =_context.Customers.Single(c => c.Id == id);
@@ -60,6 +64,7 @@ namespace Vidly.Controllers
 
         // Post : Customers/Save
         [HttpPost]
+        [Authorize(Roles =RoleName.CanManageCustmers)]
         [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {

@@ -5,7 +5,7 @@
 
 <h2>Customers</h2>
 
-<div>@Html.ActionLink("Create New", "Create", "Customers", new { @class = "btn btn-primary" })</div>
+<div>@Html.ActionLink("Create New", "Create", "Customers", new { @class = "btn btn-warning" })</div>
 <br/>
 <table  id="customers" class="table table-bordered table-hover">
     <thead>
@@ -22,7 +22,7 @@
             <td>@Html.ActionLink(customer.Name, "Edit", new { id = customer.Id })</td>
             <td>@customer.MembershipType.Name</td>
             <td>
-                <button data-customer-id="@customer.Id" class="btn-link js-delete">Delete</button>
+                <button data-customer-id="@customer.Id" class="btn-link js-delete btn-danger">Delete</button>
             </td>
         </tr>
     }

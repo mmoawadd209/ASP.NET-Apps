@@ -2,7 +2,7 @@
 
 <h2>Movies</h2>
 
-<div>@Html.ActionLink("New Movie", "Create", "Movies", new { @Class = "btn btn-primary" })</div>
+<div>@Html.ActionLink("New Movie", "Create", "Movies", new { @Class = "btn btn-warning" })</div>
 <br />
 <table id="movies" class="table table-bordered table-hover">
     <thead>
@@ -19,7 +19,7 @@
             <td>@Html.ActionLink(movie.Name, "Edit", new { id = movie.Id })</td>
             <td>@movie.Genre.Name</td>
             <td>
-                <button data-movie-id="@movie.Id" class="btn-link js-delete">Delete</button>
+                <button data-movie-id="@movie.Id" class="btn-link js-delete btn-danger">Delete</button>
             </td>
         </tr>
     }

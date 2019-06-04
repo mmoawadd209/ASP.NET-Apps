@@ -1,10 +1,9 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Vidly.Models;
 
-namespace Vidly.View_Models
+namespace Vidly.View_Models.ApplicationViewModels
 {
     public class MovieViewModel
     {

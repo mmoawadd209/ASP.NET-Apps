@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Vidly.Models.Customer>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Customers</h2>
+
+
+<table  id="customers" class="table table-bordered table-hover">
+    <thead>
+         <tr>
+              <th>@Html.LabelFor(m =>m.ToList()[0].Name)</th>
+              <th>@Html.LabelFor(m =>m.ToList()[0].MembershipType.Name)</th>
+                      
+         </tr>
+    </thead>
+    <tbody>
+    @foreach (var customer in Model)
+    {
+        <tr>
+            <td>@customer.Name</td>
+            <td>@customer.MembershipType.Name</td>
+            
+        </tr>
+    }
+    </tbody>
+</table>
+@section scripts
+{
+    <script>
+
+        $(document).ready(function() {
+         $("#customers").DataTable();
+        });
+
+    </script>
+}

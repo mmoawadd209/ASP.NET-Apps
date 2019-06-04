@@ -7,6 +7,7 @@ using Vidly.Models;
 
 namespace Vidly.Controllers.APIs
 {
+    [Authorize(Roles =RoleName.CanManageCustmers)]
     public class CustomersController : ApiController
     {
         private readonly ApplicationDbContext _context;
