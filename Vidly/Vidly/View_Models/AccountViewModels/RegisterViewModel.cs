@@ -21,5 +21,11 @@ namespace Vidly.View_Models.AccountViewModels
         [Display(Name = "Confirm password")]
         [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+
+        [Required]
+        [RegularExpression(@"(\+)?(2)?(01)[0-9]{9}", ErrorMessage = "Invalid Phone Number.")]
+        [Display(Name = "Phone")]
+        public string PhoneNumber { get; set; }
     }
 }

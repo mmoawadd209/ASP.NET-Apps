@@ -7,5 +7,10 @@ namespace Vidly.View_Models.AccountViewModels
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Required]
+        [Phone]
+        [Display(Name = "Phone")]
+        public string PhoneNumber { get; set; }
     }
 }
