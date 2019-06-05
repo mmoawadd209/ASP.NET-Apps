@@ -290,8 +290,13 @@
     <Compile Include="Migrations\201906040635418_AddPhoneCoulmnToUsersTable.Designer.cs">
       <DependentUpon>201906040635418_AddPhoneCoulmnToUsersTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906051514391_AddRentalsTable.cs" />
+    <Compile Include="Migrations\201906051514391_AddRentalsTable.Designer.cs">
+      <DependentUpon>201906051514391_AddRentalsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Rental.cs" />
     <Compile Include="View_Models\AccountViewModels\ForgotPasswordViewModel.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
@@ -618,6 +623,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906040635418_AddPhoneCoulmnToUsersTable.resx">
       <DependentUpon>201906040635418_AddPhoneCoulmnToUsersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906051514391_AddRentalsTable.resx">
+      <DependentUpon>201906051514391_AddRentalsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
