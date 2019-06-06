@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Web.Http;
 using Vidly.Models;
-using Vidly.View_Models;
+using Vidly.View_Models.ApplicationViewModels;
 
 namespace Vidly.Controllers.APIs
 {
@@ -10,9 +10,9 @@ namespace Vidly.Controllers.APIs
     {
         private readonly ApplicationDbContext _context;
 
-        public RentalsController(ApplicationDbContext context)
+        public RentalsController()
         {
-            _context = context;
+            _context = new ApplicationDbContext();
         }
 
         //api/Rentals
