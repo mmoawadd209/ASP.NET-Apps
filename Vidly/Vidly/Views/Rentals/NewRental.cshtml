@@ -8,14 +8,14 @@
     <div class="form-group">
         <label>Customer</label>
         <div class="tt-container">
-            <input id="customer" type="text" class="form-control" />
+            <input id="customer" name="customer" data-rule-validCustomer="true" required type="text" class="form-control" />
         </div>
         
     </div>
     <div class="form-group">
         <label>Movies</label>
         <div class="tt-container">
-            <input id="movie" type="text" class="form-control"/>
+            <input id="movie" name="movie" data-rule-atLeastOneMovie="true" type="text" class="form-control"/>
         </div>
        
     </div>
@@ -31,6 +31,7 @@
 
 @section scripts
 {
+    @Scripts.Render("~/bundles/jqueryval")
     <script>
         $(document).ready(function() {
             var vm = {
@@ -87,23 +88,39 @@
                     vm.MoviesIds.push(movie.Id);
                 });
 
+            $.validator.addMethod("validCustomer",
+                function() {
+                    return vm.CustomerId && vm.CustomerId !== 0;
+                },"Please Select a valid customer");
 
-            $("#newRental").on("submit",function(e) {
-                e.preventDefault();
 
-                $.ajax({
-                    url: "/api/Rentals",
-                    method: "POST",
-                    data: vm
-                })
-                 .done(function() {
-                    console.log("done.");
+            $.validator.addMethod("atLeastOneMovie", function() {
+                return vm.MoviesIds.length > 0;
+            }, "Please, select at least one movie.");
 
-                })
-                 .fail(function() {
+           var validator = $("#newRental").validate({
+                submitHandler: function() {                   
+                    $.ajax({
+                            url: "/api/Rentals",
+                            method: "POST",
+                            data: vm
+                        })
+                        .done(function() {
+                            toastr.success("New rental has been recorded.");
 
-                });
+                            $("#customer").typeahead("val", "");
+                            $("#movie").typeahead("val", "");
+                            $("#movies").empty();
 
+                            vm = { MoviesIDs: [] };
+
+                            validator.resetForm();
+                        })
+                        .fail(function() {
+                            toastr.error("Something went wrong");
+                        });
+                    return false;
+                }
             });
         });
 
